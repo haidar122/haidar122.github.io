@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
+
+  <title>Kenalan Yuk</title>
+  <!--
+Reflux Template
+https://templatemo.com/tm-531-reflux
+-->
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css" />
+  <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+  <link rel="stylesheet" href="assets/css/owl.css" />
+  <link rel="stylesheet" href="assets/css/lightbox.css" />
+</head>
+
+<body>
+  <div id="page-wraper">
+    <!-- Sidebar Menu -->
+    <div class="responsive-nav">
+      <i class="fa fa-bars" id="menu-toggle"></i>
+      <div id="menu" class="menu">
+        <i class="fa fa-times" id="menu-close"></i>
+        <div class="container">
+          <div class="image">
+            <a href="#"><img src="assets/images/me.png" alt="" /></a>
+          </div>
+          <div class="author-content">
+            <h4>AL HAIDAR</h4>
+            <span>Web Developer</span>
+          </div>
+          <nav class="main-nav" role="navigation">
+            <ul class="main-menu">
+              <li><a href="#section1">About Me</a></li>
+              <li><a href="#section2">What I’m good at</a></li>
+              <li><a href="#section4">Contact Me</a></li>
+            </ul>
+          </nav>
+
+          <div class="copyright-text">
+            <p>Copyright 2022 HDR Design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section about-me" data-section="section1">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About Me</h2>
+          <div class="line-dec"></div>
+          <span>My Name is Maulana Haidar, my nickname Al Haidar.</span>
+          <br>
+          <span>I study at ibrahimy university, majoring in information technology.</span>
+          <br>
+          <span>I live in Sukorejo, my address Jln. KHR. Syamsul Arifin</span>
+        </div>
+        <div class="left-image-post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-image">
+                <img src="assets/images/left-image.jpg" alt="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="right-text">
+                <h4>My Profile</h4>
+                <p>
+                  Saya adalah seorang Pelajar Mandiri yang bertempat tinggal di Provinsi Jawa Timur itu lah perkenalan
+                  singkat saya :)
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section my-services" data-section="section2">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What I’m good at?</h2>
+          <div class="line-dec"></div>
+          <span>Saya memiliki beberapa keahlian dalam bidang Teknologi & Keagamaan tapi sedikit,
+            kenapa sedikit ?, karena saya seorang pendosa hebat yang tak lupa akan tuhan nya & tetap berusaha berada di
+            jalan yang benar.</span>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="service-item">
+              <div class="first-service-icon service-icon"></div>
+              <h4>Berfikir kritis</h4>
+              <p>
+                Selalu melakukan sesuatu yang aneh.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-item">
+              <div class="second-service-icon service-icon"></div>
+              <h4>Programming</h4>
+              <p>
+                Belajar programming sampai mampus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section contact-me" data-section="section4">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Contact Me</h2>
+          <div class="line-dec"></div>
+          <li>
+            <a href="https://maulanahaidar122.blogspot.com/p/blog-page_27.html"><i class="fa fa-whatsapp"></i> Klik
+              logo</a>
+          </li>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+    //according to loftblog tut
+    $(".main-menu li:first").addClass("active");
+
+    var showSection = function showSection(section, isAnimate) {
+      var direction = section.replace(/#/, ""),
+        reqSection = $(".section").filter(
+          '[data-section="' + direction + '"]'
+        ),
+        reqSectionPos = reqSection.offset().top - 0;
+
+      if (isAnimate) {
+        $("body, html").animate(
+          {
+            scrollTop: reqSectionPos
+          },
+          800
+        );
+      } else {
+        $("body, html").scrollTop(reqSectionPos);
+      }
+    };
+
+    var checkSection = function checkSection() {
+      $(".section").each(function () {
+        var $this = $(this),
+          topEdge = $this.offset().top - 80,
+          bottomEdge = topEdge + $this.height(),
+          wScroll = $(window).scrollTop();
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var currentId = $this.data("section"),
+            reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+          reqLink
+            .closest("li")
+            .addClass("active")
+            .siblings()
+            .removeClass("active");
+        }
+      });
+    };
+
+    $(".main-menu").on("click", "a", function (e) {
+      e.preventDefault();
+      showSection($(this).attr("href"), true);
+    });
+
+    $(window).scroll(function () {
+      checkSection();
+    });
+  </script>
+</body>
+
+</html>
